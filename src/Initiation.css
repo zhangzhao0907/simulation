@@ -1,0 +1,14 @@
+@import '~antd/dist/antd.css';
+
+ .span-text{
+    margin-left: 10px;
+    color:#aaa
+ }
+
+ .banner{
+    font-size: 18pt;
+    color:#aaa;
+    margin:0px;
+    margin-top:-10px;
+    margin-bottom:10px;
+ }

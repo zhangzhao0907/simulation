@@ -1,0 +1,22 @@
+@import '~antd/dist/antd.css';
+
+.banner{
+    line-height: 40px;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+}
+
+.ant-table-tbodys{
+    background-color: #002766;
+    color:white;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+}
+
+.ant-table-tbody > tr:hover > td {
+	background-color: #228ffc!important;
+}
+
+.output-row{
+    padding-left: 20px;
+}

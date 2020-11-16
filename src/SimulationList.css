@@ -1,0 +1,22 @@
+@import '~antd/dist/antd.css';
+
+.discription-wrapper {
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 14px;
+    line-height: 1;
+  }
+  
+  .sub-title {
+    display: block;
+    color: #646568;
+    font-size: 16px;
+    line-height: 0.6;
+    margin-bottom: 25px;
+  }
+  
+
+  .discription-wrapper-p {
+    display: inline-block;
+    margin-right: 8px;
+    color: rgba(0, 0, 0, 0.85);
+  }
