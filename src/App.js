@@ -16,10 +16,11 @@ import {
   Link,
 } from "react-router-dom";
 
-
 import Initiation from './Initiation.js'
 import ResultData from './ResultData.js'
 import SimulationList from './SimulationList.js'
+import Introduction from './Introduction.js'
+import Tutorial from './Tutorial.js'
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -48,10 +49,14 @@ class SiderFrame extends React.Component {
               </Menu.Item>
               <Menu.Item key="2" icon={<OrderedListOutlined />}>
                 <Link to="/simulations">Simulation List</Link>
-            </Menu.Item>
-              <SubMenu key="sub4" icon={<ReadOutlined />} title="Tutorial">
-                <Menu.Item key="3">Introduction</Menu.Item>
-                <Menu.Item key="4">Parameter</Menu.Item>
+              </Menu.Item>
+              <SubMenu key="sub4" icon={<ReadOutlined />} title="Document">
+                <Menu.Item key="3">
+                  <Link to="/introduction">Introduction</Link>
+                </Menu.Item>
+                <Menu.Item key="4">
+                  <Link to="/tutorial">Tutorial</Link>
+                </Menu.Item>
               </SubMenu>
               <Menu.Item key="5" icon={<TeamOutlined />}>
                 About
@@ -71,6 +76,12 @@ class SiderFrame extends React.Component {
                   </Route>
                   <Route path="/result">
                     <ResultData />
+                  </Route>
+                  <Route path="/introduction">
+                    <Introduction />
+                  </Route>
+                  <Route path="/tutorial">
+                    <Tutorial />
                   </Route>
                 </Switch>
               </div>
