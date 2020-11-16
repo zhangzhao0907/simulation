@@ -37,7 +37,7 @@ const Initiation = () => {
       .catch(function (error) {
         console.log(error);
       });
-      history.push('/simulations');
+      history.push('/result');
   };
 
   return (
