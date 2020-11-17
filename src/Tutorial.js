@@ -15,13 +15,13 @@ const Tutorial = () => {
                         <Link href="">How to use the system</Link>
                     </li>
                     <li>
-                        <Link href="">The parameters interprete</Link>
+                        <Link href="">The parameters interpretation</Link>
                     </li>
                     <li>
-                        <Link href="">Contact Us</Link>
+                        <Link href="">The result interpretation</Link>
                     </li>
                     <li>
-                        <Link href="">The parameters interprete</Link>
+                        <Link href="">3D Rendering introduction</Link>
                     </li>
                     <li>
                         <Link href="">Contact us</Link>

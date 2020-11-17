@@ -10,7 +10,7 @@ import {
 } from '@ant-design/icons';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link,
@@ -21,6 +21,7 @@ import ResultData from './ResultData.js'
 import SimulationList from './SimulationList.js'
 import Introduction from './Introduction.js'
 import Tutorial from './Tutorial.js'
+import Success from './Success.js'
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -68,6 +69,9 @@ class SiderFrame extends React.Component {
             <Content style={{ margin: '16px' }}>
               <div className="site-layout-background" style={{ padding: 20, minHeight: 600 }}>
                 <Switch>
+                  <Route exact={true} path="/">
+                    <Introduction />
+                  </Route>
                   <Route path="/initiation">
                     <Initiation />
                   </Route>
@@ -82,6 +86,9 @@ class SiderFrame extends React.Component {
                   </Route>
                   <Route path="/tutorial">
                     <Tutorial />
+                  </Route>
+                  <Route path="/success">
+                    <Success />
                   </Route>
                 </Switch>
               </div>
