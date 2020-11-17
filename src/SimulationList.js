@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Table, Tag, Space, Drawer, Row, Col, Divider} from 'antd';
+import { createHashHistory } from "history";
+import { Button, Table, Tag, Space, Drawer, Row, Col, Divider, Modal} from 'antd';
 import { DeleteOutlined, SlidersOutlined } from '@ant-design/icons';
 import {input, output} from './Global.js';
 import './SimulationList.css';
@@ -127,8 +128,6 @@ for (let i = 0; i < 100; i++) {
     });
 }
 
-
-
 class SimulationList extends React.Component {
     constructor(props) {
         super(props);
@@ -148,10 +147,25 @@ class SimulationList extends React.Component {
     }
 
     showDrawer = (index) => {
+        if(index < 0 || index >= data.length){
+            Modal.warning({
+                title: 'System Tips',
+                content: 'No More Item...',
+              });
+            return;
+        }
         this.setState({
             visible: true,
             i:index,
         });
+    };
+
+    jump = () => {
+        let history = createHashHistory();
+        history.push({
+            pathname: "/result",
+        });
+        history.go();
     };
 
     onClose = () => {
@@ -260,10 +274,10 @@ class SimulationList extends React.Component {
                             <Button type="primary" onClick={() => this.showDrawer(this.state.i - 1)}>Previous</Button>
                         </Col>
                         <Col span={8} style={{textAlign:'center'}}>
-                            <Button type="primary" style={{width:"200px"}}>3D Rendering</Button>
+                            <Button type="primary" style={{width:"200px"}} onClick={() => this.jump()}>3D Rendering</Button>
                         </Col>
                         <Col span={8} style={{textAlign:'center'}}>
-                            <Button type="primary"  onClick={() => this.showDrawer(this.state.i + 1)}>Next</Button>
+                            <Button type="primary" onClick={() => this.showDrawer(this.state.i + 1)}>Next</Button>
                         </Col>
 
                     </Row>
