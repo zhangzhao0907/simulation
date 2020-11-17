@@ -43,7 +43,7 @@ class SiderFrame extends React.Component {
         <Router>
           <Sider className="side" collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
             <div className="logo">Simulation</div>
-            <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+            <Menu theme='dark' defaultSelectedKeys={['1']} mode="inline">
               <Menu.Item key="1" icon={<AreaChartOutlined />}>
                 <Link to="/initiation">Task Initiation</Link>
               </Menu.Item>
