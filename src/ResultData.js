@@ -1,6 +1,6 @@
 import './ResultData.css';
 import React from 'react';
-import { Statistic, Card, Row, Col, Image, Table } from 'antd';
+import { Statistic, Row, Col, Image, Table } from 'antd';
 import { input, output } from './Global.js';
 import { ExclamationCircleTwoTone, PieChartTwoTone, BoxPlotTwoTone, ExperimentTwoTone, StarTwoTone, SyncOutlined, FireOutlined
         ,BorderOutlined, NodeIndexOutlined, BugOutlined, LoginOutlined, DotChartOutlined, ThunderboltTwoTone} from '@ant-design/icons';

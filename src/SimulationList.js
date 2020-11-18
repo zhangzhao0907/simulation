@@ -1,9 +1,11 @@
 import React from 'react';
 import { createHashHistory } from "history";
-import { Button, Table, Tag, Space, Drawer, Row, Col, Divider, Modal} from 'antd';
+import { Button, Table, Tag, Space, Drawer, Row, Col, Divider, Modal, Card} from 'antd';
 import { DeleteOutlined, SlidersOutlined } from '@ant-design/icons';
 import {input, output} from './Global.js';
 import './SimulationList.css';
+
+import Filter from './Filter.js'
 
 
 const DescriptionItem = ({ title, content }) => (
@@ -178,6 +180,7 @@ class SimulationList extends React.Component {
         const dataNow = data[this.state.i];
         return (
             <>
+                <Filter />
                 <Table columns={columns} dataSource={data} />
                 <Drawer
                     title='Simulation Resualt PreView'
@@ -185,6 +188,7 @@ class SimulationList extends React.Component {
                     closable={false}
                     onClose={this.onClose}
                     visible={this.state.visible}
+                    drawerStyle={{background:"#011528"}}
                 >
                     <Row>
                         <Col span={6} offset={1}>
@@ -200,7 +204,7 @@ class SimulationList extends React.Component {
                             <DescriptionItem title='Time' content={dataNow.time}></DescriptionItem>
                         </Col>
                     </Row>
-                    <p className="sub-title" style={{marginTop:'10px'}}>Input Parameters</p>
+                    <p className="sub-title" style={{marginTop:'10px', color:"white"}}>Input Parameters</p>
                     <Row>
                         <Col span={7} offset={1}>
                             <Description dataNow={dataNow} from={2} to={10}/>
@@ -241,7 +245,8 @@ class SimulationList extends React.Component {
                     </Row>
                     <Divider />
 
-                    <p className="sub-title">Simulation Resualt</p>
+                    <p className="sub-title" style={{color:"white"}}>Simulation Resualt</p>
+                    <Card style={{background:"#002766"}}>
                     <Row>
                         <Col span={7} offset={1}>
                             <DescriptionItem title={output[0].title} content='12.5'></DescriptionItem>
@@ -268,7 +273,9 @@ class SimulationList extends React.Component {
                             <DescriptionItem title={output[16].title} content='12.5'></DescriptionItem>
                         </Col>
                     </Row>
+                    </Card>
                     <Divider />
+                    
                     <Row>
                         <Col span={8} style={{textAlign:'center'}}>
                             <Button type="primary" onClick={() => this.showDrawer(this.state.i - 1)}>Previous</Button>
@@ -281,6 +288,7 @@ class SimulationList extends React.Component {
                         </Col>
 
                     </Row>
+
                 </Drawer>
             </>
         );
