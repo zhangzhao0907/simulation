@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Image } from 'antd';
 import {
   OrderedListOutlined,
   TeamOutlined,
@@ -43,7 +43,7 @@ class SiderFrame extends React.Component {
       <Layout style={{ minHeight: '100vh' }}>
         <Router>
           <Sider className="side" collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
-            <div className="logo">Simulation</div>
+            <div className="logo"><Image width={45} height={45} src="logo.png" style={{marginRight:"8px", marginLeft:"6px"}}/>Simulation</div>
             <Menu theme='dark' defaultSelectedKeys={['1']} mode="inline">
               <Menu.Item key="1" icon={<AreaChartOutlined />}>
                 <Link to="/initiation">Task Initiation</Link>
