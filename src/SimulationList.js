@@ -1,8 +1,9 @@
 import React from 'react';
 import { createHashHistory } from "history";
-import { Button, Table, Tag, Space, Drawer, Row, Col, Divider, Modal, Card} from 'antd';
-import { DeleteOutlined, SlidersOutlined } from '@ant-design/icons';
-import {input, output} from './Global.js';
+import { Button, Table, Tag, Space, Drawer, Row, Col, Modal, Card } from 'antd';
+import { DeleteOutlined, CodeSandboxOutlined, SlidersOutlined, ManOutlined, ScanOutlined,
+    CalendarOutlined, ClockCircleOutlined, EditFilled, DropboxOutlined} from '@ant-design/icons';
+import { input, output } from './Global.js';
 import './SimulationList.css';
 
 import Filter from './Filter.js'
@@ -10,19 +11,18 @@ import Filter from './Filter.js'
 
 const DescriptionItem = ({ title, content }) => (
     <div className="discription-wrapper">
-      <p className="discription-wrapper-p">{title}:</p>
-      {content}
+        <p className="discription-wrapper-p">{title}:</p>
+        {content}
     </div>
-  );
+);
 
-  function Description(props) {
+function Description(props) {
     const ss = [];
-    for(let i = props.from; i <= props.to; i++){
+    for (let i = props.from; i <= props.to; i++) {
         ss.push(<DescriptionItem title={input[i].title} content={props.dataNow[input[i].key]}></DescriptionItem>);
     }
     return ss;
-  }
-
+}
 
 const columns = [
     {
@@ -80,7 +80,7 @@ for (let i = 0; i < 100; i++) {
         id: i,
         render: i % 2 == 0 ? 'true' : 'false',
         time: `2020-11-11`,
-        
+
         age: 32,
         gender: i % 2 == 1 ? 'male' : 'female',
         wound_location: 'face',
@@ -93,7 +93,7 @@ for (let i = 0; i < 100; i++) {
         tnf_a: 22.5,
         inflammatory_cytokine: 12.4,
         inflammatory_cell: 22.1,
-        macrophages_concentraion:22.7,
+        macrophages_concentraion: 22.7,
         wound_healing_time: '2020-10-11',
         wound_infected: false,
         epidermal_laser_density: 32.3,
@@ -142,23 +142,23 @@ class SimulationList extends React.Component {
 
         this.state = {
             visible: false,
-            i:0,
+            i: 0,
         };
 
         this.showDrawer = this.showDrawer.bind(this);
     }
 
     showDrawer = (index) => {
-        if(index < 0 || index >= data.length){
+        if (index < 0 || index >= data.length) {
             Modal.warning({
                 title: 'System Tips',
                 content: 'No More Item...',
-              });
+            });
             return;
         }
         this.setState({
             visible: true,
-            i:index,
+            i: index,
         });
     };
 
@@ -183,32 +183,45 @@ class SimulationList extends React.Component {
                 <Filter />
                 <Table columns={columns} dataSource={data} />
                 <Drawer
-                    title='Simulation Resualt PreView'
                     width={900}
                     closable={false}
                     onClose={this.onClose}
                     visible={this.state.visible}
-                    drawerStyle={{background:"#011528"}}
+                    drawerStyle={{ background: "#011528" }}
                 >
                     <Row>
-                        <Col span={6} offset={1}>
-                            <DescriptionItem title='ID' content={<Tag color='red' >{dataNow.id}</Tag>}></DescriptionItem>
-                        </Col>
-                        <Col span={6}>
-                            <DescriptionItem title='Gender' content={<Tag color='blue' >{dataNow.gender}</Tag>}></DescriptionItem>    
-                        </Col>
-                        <Col span={6}>
-                            <DescriptionItem title='Age' content={dataNow.age}></DescriptionItem>
-                        </Col>
-                        <Col span={5}>
-                            <DescriptionItem title='Time' content={dataNow.time}></DescriptionItem>
+                        <Col span={12}>
+                            <h1 style={{ color: "white", marginTop: "-10px" }}><CodeSandboxOutlined style={{ marginRight: "8px", color: "#1890ff"}}/><strong>Simulation Result Preview</strong></h1>
                         </Col>
                     </Row>
-                    <p className="sub-title" style={{marginTop:'10px', color:"white"}}>Input Parameters</p>
                     <Row>
-                        <Col span={7} offset={1}>
-                            <Description dataNow={dataNow} from={2} to={10}/>
-                            {/* <DescriptionItem title={input[2].title} content='12.5'></DescriptionItem>
+                        <Col span={5} offset={1}>
+                            <h3 className="discription-h3"><ScanOutlined style={{color: "#eb2f96", marginRight:"4px"}}/>
+                                ID:<strong style={{marginLeft:"6px"}}>{dataNow.id}</strong>
+                            </h3>
+                        </Col>
+                        <Col span={6}>
+                            <h3 className="discription-h3"><ManOutlined style={{color: "#eb2f96", marginRight:"4px"}}/>
+                                Gender:<strong style={{marginLeft:"6px"}}>{dataNow.gender}</strong>
+                            </h3>
+                        </Col>
+                        <Col span={6}>
+                            <h3 className="discription-h3"><ClockCircleOutlined style={{color: "#eb2f96", marginRight:"4px"}}/>
+                                Age:<strong style={{marginLeft:"6px"}}>{dataNow.age}</strong>
+                            </h3>
+                        </Col>
+                        <Col span={6}>
+                            <h3 className="discription-h3"><CalendarOutlined style={{color: "#eb2f96", marginRight:"4px"}}/>
+                                Date:<strong style={{marginLeft:"6px"}}>{dataNow.time}</strong>
+                            </h3>
+                        </Col>
+                    </Row>
+                    <h3 className="sub-title"><EditFilled style={{marginRight:"4px", color: "#1890ff"}}/>Input Parameters</h3>
+                    <Card style={{ background: "#d9d9d9", marginTop: "-10px" }}>
+                        <Row>
+                            <Col span={8}>
+                                <Description dataNow={dataNow} from={2} to={10} />
+                                {/* <DescriptionItem title={input[2].title} content='12.5'></DescriptionItem>
                             <DescriptionItem title={input[3].title} content='12.5'></DescriptionItem>
                             <DescriptionItem title={input[4].title} content='12.5'></DescriptionItem>
                             <DescriptionItem title={input[5].title} content='12.5'></DescriptionItem>
@@ -217,10 +230,10 @@ class SimulationList extends React.Component {
                             <DescriptionItem title={input[8].title} content='12.5'></DescriptionItem>
                             <DescriptionItem title={input[9].title} content='12.5'></DescriptionItem>
                             <DescriptionItem title={input[10].title} content='12.5'></DescriptionItem> */}
-                        </Col>
-                        <Col span={8}>
-                            <Description dataNow={dataNow} from={11} to={19}/>
-                            {/* <DescriptionItem title={input[11].title} content='12.5'></DescriptionItem>
+                            </Col>
+                            <Col span={8}>
+                                <Description dataNow={dataNow} from={11} to={19} />
+                                {/* <DescriptionItem title={input[11].title} content='12.5'></DescriptionItem>
                             <DescriptionItem title={input[12].title} content='12.5'></DescriptionItem>
                             <DescriptionItem title={input[13].title} content='12.5'></DescriptionItem>
                             <DescriptionItem title={input[14].title} content='12.5'></DescriptionItem>
@@ -229,10 +242,10 @@ class SimulationList extends React.Component {
                             <DescriptionItem title={input[17].title} content='12.5'></DescriptionItem>
                             <DescriptionItem title={input[18].title} content='12.5'></DescriptionItem>
                             <DescriptionItem title={input[19].title} content='12.5'></DescriptionItem> */}
-                        </Col>
-                        <Col span={8}>
-                            <Description dataNow={dataNow} from={20} to={27}/>
-                            {/* <DescriptionItem title={input[20].title} content='12.5'></DescriptionItem>
+                            </Col>
+                            <Col span={8}>
+                                <Description dataNow={dataNow} from={20} to={27} />
+                                {/* <DescriptionItem title={input[20].title} content='12.5'></DescriptionItem>
                             <DescriptionItem title={input[21].title} content='12.5'></DescriptionItem>
                             <DescriptionItem title={input[22].title} content='12.5'></DescriptionItem>
                             <DescriptionItem title={input[23].title} content='12.5'></DescriptionItem>
@@ -241,52 +254,50 @@ class SimulationList extends React.Component {
                             <DescriptionItem title={input[26].title} content='12.5'></DescriptionItem>
                             <DescriptionItem title={input[27].title} content='12.5'></DescriptionItem>
                             <DescriptionItem title={input[27].title} content='12.5'></DescriptionItem> */}
-                        </Col>
-                    </Row>
-                    <Divider />
-
-                    <p className="sub-title" style={{color:"white"}}>Simulation Resualt</p>
-                    <Card style={{background:"#002766"}}>
-                    <Row>
-                        <Col span={7} offset={1}>
-                            <DescriptionItem title={output[0].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={output[1].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={output[2].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={output[3].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={output[4].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={output[5].title} content='12.5'></DescriptionItem>
-                            
-                        </Col>
-                        <Col span={8}>
-                            <DescriptionItem title={output[6].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={output[7].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={output[8].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={output[9].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={output[10].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={output[11].title} content='12.5'></DescriptionItem>
-                        </Col>
-                        <Col span={8}>
-                            <DescriptionItem title={output[12].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={output[13].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={output[14].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={output[15].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={output[16].title} content='12.5'></DescriptionItem>
-                        </Col>
-                    </Row>
+                            </Col>
+                        </Row>
                     </Card>
-                    <Divider />
-                    
-                    <Row>
-                        <Col span={8} style={{textAlign:'center'}}>
+
+                    <h3 className="sub-title"><DropboxOutlined style={{marginRight:"4px", color: "#1890ff"}}/>Simulation Resualt</h3>
+                    <Card style={{ background: "#d9d9d9", marginTop: "-10px" }}>
+                        <Row>
+                            <Col span={9}>
+                                <DescriptionItem title={output[0].title} content='12.5'></DescriptionItem>
+                                <DescriptionItem title={output[1].title} content='12.5'></DescriptionItem>
+                                <DescriptionItem title={output[2].title} content='12.5'></DescriptionItem>
+                                <DescriptionItem title={output[3].title} content='12.5'></DescriptionItem>
+                                <DescriptionItem title={output[4].title} content='12.5'></DescriptionItem>
+                                <DescriptionItem title={output[5].title} content='12.5'></DescriptionItem>
+
+                            </Col>
+                            <Col span={7}>
+                                <DescriptionItem title={output[6].title} content='12.5'></DescriptionItem>
+                                <DescriptionItem title={output[7].title} content='12.5'></DescriptionItem>
+                                <DescriptionItem title={output[8].title} content='12.5'></DescriptionItem>
+                                <DescriptionItem title={output[9].title} content='12.5'></DescriptionItem>
+                                <DescriptionItem title={output[10].title} content='12.5'></DescriptionItem>
+                                <DescriptionItem title={output[11].title} content='12.5'></DescriptionItem>
+                            </Col>
+                            <Col span={8}>
+                                <DescriptionItem title={output[12].title} content='12.5'></DescriptionItem>
+                                <DescriptionItem title={output[13].title} content='12.5'></DescriptionItem>
+                                <DescriptionItem title={output[14].title} content='12.5'></DescriptionItem>
+                                <DescriptionItem title={output[15].title} content='12.5'></DescriptionItem>
+                                <DescriptionItem title={output[16].title} content='12.5'></DescriptionItem>
+                            </Col>
+                        </Row>
+                    </Card>
+
+                    <Row style={{ marginTop: '20px' }}>
+                        <Col span={8} style={{ textAlign: 'center' }}>
                             <Button type="primary" onClick={() => this.showDrawer(this.state.i - 1)}>Previous</Button>
                         </Col>
-                        <Col span={8} style={{textAlign:'center'}}>
-                            <Button type="primary" style={{width:"200px"}} onClick={() => this.jump()}>3D Rendering</Button>
+                        <Col span={8} style={{ textAlign: 'center' }}>
+                            <Button type="primary" style={{ width: "200px" }} onClick={() => this.jump()}>3D Rendering</Button>
                         </Col>
-                        <Col span={8} style={{textAlign:'center'}}>
+                        <Col span={8} style={{ textAlign: 'center' }}>
                             <Button type="primary" onClick={() => this.showDrawer(this.state.i + 1)}>Next</Button>
                         </Col>
-
                     </Row>
 
                 </Drawer>
