@@ -16,19 +16,49 @@
 }
 
 .left200{
-  margin-left: 200px;
+  left: 200px;
 }
 
 .left80{
-  margin-left: 80px;
+  left: 80px;
 }
 
-.site-layout .site-layout-background {
-  background: #fff;
+.header-style{
+  position:fixed;
+  background:white;
+  z-index: 5;
+  right:0px;
+  height:52px;
+  padding: 0;
+  border-bottom: solid 1px #d9d9d9;
+  float:left;
 }
 
-.h1-title{
+.header-style > h1{
   text-align: center;
-  font-size: 28pt;
-  color:#002766;
+  line-height: 52px;;
+  font-size: 26pt;
+  color: #002766;
+  font-family: 'Times New Roman';
+  font-weight: bolder;
+}
+
+.trigger {
+  font-size: 18px;
+  line-height: 56px;
+  padding: 0 15px;
+  cursor: pointer;
+  float:left;
+}
+
+.footer-style{
+  text-align: center;
+  background-color: white;
+  height: 60px;
+  padding: 15px;
+  border-top: solid 1px #d9d9d9;
+  font-size: 14pt;
+  font-family: 'Times New Roman';
+  font-weight: bolder;
+  color:#595959;
 }

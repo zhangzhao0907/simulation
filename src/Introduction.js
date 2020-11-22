@@ -1,5 +1,5 @@
 import { Typography } from 'antd';
-
+import {Image} from 'antd';
 const { Title, Paragraph, Text, Link } = Typography;
 
 const Introduction = () => {
@@ -24,6 +24,28 @@ const Introduction = () => {
                     as many times as he or she may want.
                 </Text>.
             </Paragraph>
+            <Title level={2}>How to use the system</Title>
+            <Paragraph>
+                <p style={{marginTop:"10px"}}>click the left arrow to collopse the menu.</p>
+                <Image src="tutorial/1.png"/>
+                <p style={{marginTop:"10px"}}>it should be like this.</p>
+                <Image src="tutorial/2.png"/>
+                <p style={{marginTop:"10px"}}>click the Simulation item in the menu to initiate a simulation.</p>
+                <p style={{marginTop:"10px"}}>When you have finished entering parameters. click the simulation button. In the development version, you can click the button directly without input any parameter.</p>
+                <Image src="tutorial/3.png"/>
+                <p style={{marginTop:"10px"}}>Wait a moment. the page will jump in several seconds.</p>
+                <Image src="tutorial/4.png"/>
+                <p style={{marginTop:"10px"}}>Now. you can see the simulation result. Including the 3D graph(replaced by a picture), the parameters your have input and the output index.</p>
+                <Image src="tutorial/5.png"/>
+                <p style={{marginTop:"10px"}}>you can click the simulation list item to see the simulation list page. In the top of the page, there are some filters. Behind it is the table.
+                you can see the basic information of every simulation. There are two buttons in the right collum of the table. the right one is "delete", the left one is "more".</p>
+                <Image src="tutorial/6.png"/>
+                <p style={{marginTop:"10px"}}>A drawer page will pop up after you click the "more" button. It should looked like this.</p>
+                <Image src="tutorial/7.png"/>
+                <p style={{marginTop:"10px"}}>You can navigate to other simulations by the previous button and the next button. If you want to see more information such as the 3D graph, you
+                can click the 3D Rendering button.</p>
+            </Paragraph>
+                
             <Title level={2}>Frontend Specification</Title>
             <Title level={3}>1.Simulation Task Initiation</Title>
             <Paragraph>

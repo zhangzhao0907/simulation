@@ -48,7 +48,7 @@ const Fiter = () => {
 
                 <Col span={4}>
                     <Form.Item name="location" label="Location">
-                        <Select defaultValue="1" style={{ width: 100 }} loading>
+                        <Select defaultValue="1" style={{ width: 100 }}>
                             <Option value="1">All</Option>
                             <Option value="2">Head</Option>
                             <Option value="3">Face</Option>

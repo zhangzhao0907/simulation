@@ -8,7 +8,7 @@ class Success extends React.Component {
     componentDidMount() {
         this.timerID = setInterval(
             () => this.jump(),
-            4000
+            3000
         );
     }
 
