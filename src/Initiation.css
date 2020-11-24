@@ -2,13 +2,79 @@
 
  .span-text{
     margin-left: 10px;
-    color:#aaa
+    color:#bfbfbf;
  }
 
  .banner{
     font-size: 18pt;
-    color:#aaa;
+    color:#002766;
     margin:0px;
     margin-top:-10px;
     margin-bottom:10px;
+ }
+
+ .div-style{
+   padding-top: 24px;
+   border: solid 2px;
+   border-top-right-radius: 5px;
+   border-bottom-right-radius: 5px;
+ }
+
+ .image-style{
+    float:left;
+ }
+
+ .shader{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width:300px;
+    height:220px;
+    float:left;
+    text-align: center;
+ }
+ .shader >h1{
+    margin-top: 82px;
+    font-size: 36pt;
+    font-weight: bold;
+    line-height: 32pt;
+    color:white;
+ }
+
+ .shader1{
+   background-color: rgba(0,0,100,0.7);
+ }
+
+ .div1{
+   border-color: #002766;
+ }
+
+ .shader2{
+   background-color: rgba(0,80,90,0.7);
+ }
+
+ .div2{
+   border-color: #08979c;
+ }
+
+ .shader3{
+   background-color: rgba(90,40,150,0.7);
+   height: 360px;
+   padding-top: 70px;
+ }
+
+
+ .div3{
+   border-color: #722ed1;
+ }
+
+ .shader4{
+   background-color: rgba(160,0,90,0.7);
+   height: 315px;
+   padding-top: 50px;
+ }
+
+
+ .div4{
+   border-color: #c41d7f;
  }
