@@ -9,7 +9,7 @@ import { ExclamationCircleTwoTone, PieChartTwoTone, BoxPlotTwoTone, ExperimentTw
 
 const dataSource = [];
 
-for (let i = 0; i < 28; i++) {
+for (let i = 0; i < 21; i++) {
   dataSource.push(
     {
       key: i,
@@ -56,8 +56,8 @@ const prefixStatic=[
   <BorderOutlined style={{color:'#1890ff'}}/>,
 
   <LoginOutlined style={{color:'#1890ff'}}/>
-
 ]
+
 function OutPutRender() {
   const ss = [];
   for(let i = 0; i <= 16; i++){

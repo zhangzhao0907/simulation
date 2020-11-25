@@ -62,7 +62,7 @@ const Initiation = () => {
           </div>
 
           <div className="div-style div1" style={{ height: "220px" }}>
-            <Form.Item name="age" label='Age年龄' style={{ color: "white" }}>
+            <Form.Item name="age" label='Age 年龄' style={{ color: "white" }}>
               <InputNumber min={1} max={100} />
             </Form.Item>
 
@@ -207,13 +207,11 @@ const Initiation = () => {
       </Row>
 
 
-      <Row gutter={[16, 16]}>
+      <Row style={{ marginTop: "10px"}}>
         <Col span={24}>
-          <Form.Item>
-            <Button type="primary" htmlType="submit" style={{width:'100%'}}>
+        <Button type="primary" htmlType="submit" style={{width:'100%',height:'40px'}}>
               Simulation
             </Button>
-          </Form.Item>
         </Col>
       </Row>
     </Form>

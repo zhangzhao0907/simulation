@@ -1,31 +1,104 @@
 @import '~antd/dist/antd.css';
+.sub-title {
+  display: block;
+  line-height: 0.6;
+  margin-bottom: 25px;
+  margin-top: 15px;
+  color:#f0f0f0;
+}
+.discription-h3 {
+  color:#d9d9d9;
+  display: inline-block;
+  margin-right: 8px;
+}
 
-.discription-wrapper {
-    font-family: 'Times New Roman';
-    font-weight: bold;
-    color: #003a8c;
-    font-size: 16px;
-    line-height: 1;
-  }
+.discription {
+  font-family: 'Times New Roman';
+  font-weight: bold;
+  font-size: 14px;
+  color: #434343;
+  line-height: 10px;
+}
 
-  .discription-wrapper-p {
-    display: inline-block;
-    margin-right: 8px;
-    font-size: 14px;
-    color: #262626
-  }
+.div-small{
+  background-color: #d9d9d9;
+  padding-top: 12px;
+  padding-left:20px;
+}
+
+.shader-small{
+  text-align: center;
+}
+
+.shader-small >h1{
+  font-size: 16pt;
+  font-weight: bold;
+  line-height: 32pt;
+  color:white;
+}
+
+.shader-small1{
+  height:110px;
+  background-color: #0050b3;
+  padding-top: 34px;
+}
+
+.div-small1{
+  height:110px;
+}
+
+.label1 {
+  color: #0050b3;
+  margin-right: 5px;
+}
+
+
+.shader-small2{
+  height:110px;
+  background-color: #006d75;
+  padding-top: 34px;
+  margin-left: 8px;
+}
+
+.div-small2{
+  height:110px;
+}
+
+.label2 {
+  color: #006d75;
+  margin-right: 5px;
+}
+
+.shader-small3{
+  height:180px;
+  background-color: #391085;
+  padding-top: 60px;
+}
+
+.div-small3{
+  height:180px;
+}
+
+.label3 {
+  color: #391085;
+  margin-right: 5px;
+}
+
+.shader-small4{
+  height:180px;
+  background-color: #9e1068;
+  padding-top: 60px;
+  margin-left: 8px;
+}
+
+.div-small4{
+  height:180px;
+  padding-top: 20px;
+}
+
+.label4 {
+  color:#9e1068;
+  margin-right: 5px;
+}
+
   
-  .sub-title {
-    display: block;
-    line-height: 0.6;
-    margin-bottom: 25px;
-    margin-top: 15px;
-    color:#f0f0f0;
-  }
-
-
-  .discription-h3 {
-    color:#d9d9d9;
-    display: inline-block;
-    margin-right: 8px;
-  }

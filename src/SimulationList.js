@@ -1,19 +1,22 @@
 import React from 'react';
 import { createHashHistory } from "history";
-import { Button, Table, Tag, Space, Drawer, Row, Col, Modal, Card } from 'antd';
-import { DeleteOutlined, CodeSandboxOutlined, SlidersOutlined, ManOutlined, ScanOutlined,
-    CalendarOutlined, ClockCircleOutlined, EditFilled, DropboxOutlined} from '@ant-design/icons';
+import { Button, Table, Tag, Space, Drawer, Row, Col, Modal, Card, Image } from 'antd';
+import {
+    DeleteOutlined, CodeSandboxOutlined, SlidersOutlined, ManOutlined, ScanOutlined,
+    CalendarOutlined, ClockCircleOutlined, EditFilled, DropboxOutlined
+} from '@ant-design/icons';
 import { input, output } from './Global.js';
+
 import './SimulationList.css';
 
 import Filter from './Filter.js'
 
 
 const DescriptionItem = ({ title, content }) => (
-    <div className="discription-wrapper">
-        <p className="discription-wrapper-p">{title}:</p>
-        {content}
-    </div>
+
+    <p className="discription">{title}:{content}</p>
+
+
 );
 
 function Description(props) {
@@ -83,30 +86,26 @@ for (let i = 0; i < 100; i++) {
 
         age: 32,
         gender: i % 2 == 1 ? 'male' : 'female',
-        wound_location: 'face',
         bmi: 3.5 * i,
         weight: 67,
+
         wound_width: 34,
         wound_depth: 3 * i,
-        skin_tension: 98,
-        tgf_b: 29,
-        tnf_a: 22.5,
-        inflammatory_cytokine: 12.4,
-        inflammatory_cell: 22.1,
-        macrophages_concentraion: 22.7,
-        wound_healing_time: '2020-10-11',
+        wound_location: 'face',
         wound_infected: false,
+
         epidermal_laser_density: 32.3,
         dermal_laser_density: 32.3,
         laser_diameter: 22.2,
         laser_cross: 14.3,
         laser_inclination_angle: 80,
-        duration_laser: 2.3,
+        duration: 2.3,
         betamethason_dosage: 11,
+
         pressure: 99,
         tension_reduction: 80.3,
         botulinum_toxin: 22.1,
-        tgf_antibody: 12.2,
+        tgf_b1_antibody: 12.2,
         avastin_dosage: 32.2,
         inhibitor_dosage: 22.7,
 
@@ -115,17 +114,17 @@ for (let i = 0; i < 100; i++) {
         scar_width: 10,
         vessel_density: 89.5,
         type3_collagen_density: 12.5,
-        Type1_collagen_density: 90.3,
+        type1_collagen_density: 90.3,
         color: 23,
         smoothness: 21,
         tenderness: 34,
         itchy_intensity: 12,
         painness: 90,
         nerve_ending_density: 14.4,
-        tgf_concentration: 15.3,
-        tnf_concentration: 19.3,
+        tgf_b_concentration: 15.3,
+        tnf_a_concentration: 19.3,
         inflammatory_cytokine: 90.3,
-        inflamatory_cell_concentration: 90.3,
+        inflamatory_cell: 90.3,
         macrophages_concentraion: 89.3,
     });
 }
@@ -191,74 +190,99 @@ class SimulationList extends React.Component {
                 >
                     <Row>
                         <Col span={12}>
-                            <h1 style={{ color: "white", marginTop: "-10px" }}><CodeSandboxOutlined style={{ marginRight: "8px", color: "#1890ff"}}/><strong>Simulation Result Preview</strong></h1>
+                            <h1 style={{ color: "white", marginTop: "-10px" }}><CodeSandboxOutlined style={{ marginRight: "8px", color: "#1890ff" }} /><strong>Simulation Result Preview</strong></h1>
                         </Col>
                     </Row>
                     <Row>
                         <Col span={5} offset={1}>
-                            <h3 className="discription-h3"><ScanOutlined style={{color: "#eb2f96", marginRight:"4px"}}/>
-                                ID:<strong style={{marginLeft:"6px"}}>{dataNow.id}</strong>
+                            <h3 className="discription-h3"><ScanOutlined style={{ color: "#eb2f96", marginRight: "4px" }} />
+                                ID:<strong style={{ marginLeft: "6px" }}>{dataNow.id}</strong>
                             </h3>
                         </Col>
                         <Col span={6}>
-                            <h3 className="discription-h3"><ManOutlined style={{color: "#eb2f96", marginRight:"4px"}}/>
-                                Gender:<strong style={{marginLeft:"6px"}}>{dataNow.gender}</strong>
+                            <h3 className="discription-h3"><ManOutlined style={{ color: "#eb2f96", marginRight: "4px" }} />
+                                Gender:<strong style={{ marginLeft: "6px" }}>{dataNow.gender}</strong>
                             </h3>
                         </Col>
                         <Col span={6}>
-                            <h3 className="discription-h3"><ClockCircleOutlined style={{color: "#eb2f96", marginRight:"4px"}}/>
-                                Age:<strong style={{marginLeft:"6px"}}>{dataNow.age}</strong>
+                            <h3 className="discription-h3"><ClockCircleOutlined style={{ color: "#eb2f96", marginRight: "4px" }} />
+                                Age:<strong style={{ marginLeft: "6px" }}>{dataNow.age}</strong>
                             </h3>
                         </Col>
                         <Col span={6}>
-                            <h3 className="discription-h3"><CalendarOutlined style={{color: "#eb2f96", marginRight:"4px"}}/>
-                                Date:<strong style={{marginLeft:"6px"}}>{dataNow.time}</strong>
+                            <h3 className="discription-h3"><CalendarOutlined style={{ color: "#eb2f96", marginRight: "4px" }} />
+                                Date:<strong style={{ marginLeft: "6px" }}>{dataNow.time}</strong>
                             </h3>
                         </Col>
                     </Row>
-                    <h3 className="sub-title"><EditFilled style={{marginRight:"4px", color: "#1890ff"}}/>Input Parameters</h3>
-                    <Card style={{ background: "#d9d9d9", marginTop: "-10px" }}>
-                        <Row>
-                            <Col span={8}>
-                                <Description dataNow={dataNow} from={2} to={10} />
-                                {/* <DescriptionItem title={input[2].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[3].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[4].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[5].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[6].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[7].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[8].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[9].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[10].title} content='12.5'></DescriptionItem> */}
-                            </Col>
-                            <Col span={8}>
-                                <Description dataNow={dataNow} from={11} to={19} />
-                                {/* <DescriptionItem title={input[11].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[12].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[13].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[14].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[15].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[16].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[17].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[18].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[19].title} content='12.5'></DescriptionItem> */}
-                            </Col>
-                            <Col span={8}>
-                                <Description dataNow={dataNow} from={20} to={27} />
-                                {/* <DescriptionItem title={input[20].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[21].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[22].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[23].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[14].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[25].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[26].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[27].title} content='12.5'></DescriptionItem>
-                            <DescriptionItem title={input[27].title} content='12.5'></DescriptionItem> */}
-                            </Col>
-                        </Row>
-                    </Card>
 
-                    <h3 className="sub-title"><DropboxOutlined style={{marginRight:"4px", color: "#1890ff"}}/>Simulation Resualt</h3>
+                    <h3 className="sub-title"><EditFilled style={{ marginRight: "4px", color: "#1890ff" }} />Input Parameters</h3>
+
+                    <Row gutter={[0, 8]} style={{marginTop:"-15px"}}>
+                        <Col span={4}>
+                            <div class="shader-small shader-small1">
+                                <h1>Patient</h1>
+                            </div>
+                        </Col>
+                        <Col span={8}>
+                            <div className="div-small div-small1">
+                                <p className="discription"><span className="label1">{input[0].title}:</span>{dataNow[input[0].key]}</p>
+                                <p className="discription"><span className="label1">{input[1].title}:</span>{dataNow[input[1].key]}</p>
+                                <p className="discription"><span className="label1">{input[2].title}:</span>{dataNow[input[2].key]}</p>
+                                <p className="discription"><span className="label1">{input[3].title}:</span>{dataNow[input[3].key]}</p>
+                            </div>
+                        </Col>
+
+                        <Col span={4}>
+                            <div class="shader-small shader-small2">
+                                <h1>Wound</h1>
+                            </div>
+                        </Col>
+                        <Col span={8}>
+                            <div className="div-small div-small2">
+                                <p className="discription"><span className="label2">{input[4].title}:</span>{dataNow[input[4].key]}</p>
+                                <p className="discription"><span className="label2">{input[5].title}:</span>{dataNow[input[5].key]}</p>
+                                <p className="discription"><span className="label2">{input[6].title}:</span>{dataNow[input[6].key]}</p>
+                                <p className="discription"><span className="label2">{input[7].title}:</span>{dataNow[input[7].key]}</p>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row gutter={[0, 8]}>
+                        <Col span={4}>
+                            <div class="shader-small shader-small3">
+                                <h1>Laser</h1>
+                            </div>
+                        </Col>
+                        <Col span={8}>
+                            <div className="div-small div-small3">
+                                <p className="discription"><span className="label3">{input[8].title}:</span>{dataNow[input[0].key]}</p>
+                                <p className="discription"><span className="label3">{input[9].title}:</span>{dataNow[input[1].key]}</p>
+                                <p className="discription"><span className="label3">{input[10].title}:</span>{dataNow[input[2].key]}</p>
+                                <p className="discription"><span className="label3">{input[11].title}:</span>{dataNow[input[3].key]}</p>
+                                <p className="discription"><span className="label3">{input[12].title}:</span>{dataNow[input[1].key]}</p>
+                                <p className="discription"><span className="label3">{input[13].title}:</span>{dataNow[input[2].key]}</p>
+                                <p className="discription"><span className="label3">{input[14].title}:</span>{dataNow[input[3].key]}</p>
+                            </div>
+                        </Col>
+
+                        <Col span={4}>
+                            <div class="shader-small shader-small4">
+                                <h1>Intervention</h1>
+                            </div>
+                        </Col>
+                        <Col span={8}>
+                            <div className="div-small div-small4">
+                                <p className="discription"><span className="label4">{input[15].title}:</span>{dataNow[input[15].key]}</p>
+                                <p className="discription"><span className="label4">{input[16].title}:</span>{dataNow[input[16].key]}</p>
+                                <p className="discription"><span className="label4">{input[17].title}:</span>{dataNow[input[17].key]}</p>
+                                <p className="discription"><span className="label4">{input[18].title}:</span>{dataNow[input[18].key]}</p>
+                                <p className="discription"><span className="label4">{input[19].title}:</span>{dataNow[input[19].key]}</p>
+                                <p className="discription"><span className="label4">{input[20].title}:</span>{dataNow[input[20].key]}</p>
+                            </div>
+                        </Col>
+                    </Row>
+
+                    <h3 className="sub-title"><DropboxOutlined style={{ marginRight: "4px", color: "#1890ff" }} />Simulation Resualt</h3>
                     <Card style={{ background: "#d9d9d9", marginTop: "-10px" }}>
                         <Row>
                             <Col span={9}>
