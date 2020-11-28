@@ -285,7 +285,7 @@ class SimulationList extends React.Component {
                     <h3 className="sub-title"><DropboxOutlined style={{ marginRight: "4px", color: "#1890ff" }} />Simulation Resualt</h3>
                     <Card style={{ background: "#d9d9d9", marginTop: "-10px" }}>
                         <Row>
-                            <Col span={9}>
+                            <Col span={8} offset={1}>
                                 <DescriptionItem title={output[0].title} content='12.5'></DescriptionItem>
                                 <DescriptionItem title={output[1].title} content='12.5'></DescriptionItem>
                                 <DescriptionItem title={output[2].title} content='12.5'></DescriptionItem>
@@ -317,7 +317,7 @@ class SimulationList extends React.Component {
                             <Button type="primary" onClick={() => this.showDrawer(this.state.i - 1)}>Previous</Button>
                         </Col>
                         <Col span={8} style={{ textAlign: 'center' }}>
-                            <Button type="primary" style={{ width: "200px" }} onClick={() => this.jump()}>3D Rendering</Button>
+                            <Button type="primary" style={{ width: "200px" }} onClick={() => this.jump()}>More</Button>
                         </Col>
                         <Col span={8} style={{ textAlign: 'center' }}>
                             <Button type="primary" onClick={() => this.showDrawer(this.state.i + 1)}>Next</Button>

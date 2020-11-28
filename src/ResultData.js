@@ -1,94 +1,109 @@
 import './ResultData.css';
 import React from 'react';
-import { Statistic, Row, Col, Image, Table } from 'antd';
+import { Row, Col, Image, Table, Tabs } from 'antd';
 import { input, output } from './Global.js';
-import { ExclamationCircleTwoTone, PieChartTwoTone, BoxPlotTwoTone, ExperimentTwoTone, StarTwoTone, SyncOutlined, FireOutlined
-        ,BorderOutlined, NodeIndexOutlined, BugOutlined, LoginOutlined, DotChartOutlined, ThunderboltTwoTone} from '@ant-design/icons';
+import ChartLine from "./ChartLine.js"
+
+const { TabPane } = Tabs;
 
 
 
-const dataSource = [];
-
-for (let i = 0; i < 21; i++) {
-  dataSource.push(
-    {
-      key: i,
-      title: input[i].title,
-      value: 32,
-    }
-  );
-}
-
-const columns = [
-  {
-    title: 'Input Parameter Name',
-    dataIndex: 'title',
-    key: 'title',
-    width: '240px',
-  },
-  {
-    title: 'Value',
-    dataIndex: 'value',
-    key: 'value',
-  },
-];
-
-
-const prefixStatic=[
-  <ExclamationCircleTwoTone />,
-  <PieChartTwoTone />,
-  <BoxPlotTwoTone />,
-  <ExperimentTwoTone />,
-
-  <ExperimentTwoTone />,
-  <ExperimentTwoTone />,
-  <StarTwoTone />,
-  <SyncOutlined spin style={{color:'#1890ff'}}/>,
-
-  <SyncOutlined spin style={{color:'#1890ff'}}/>,
-  <BugOutlined style={{color:'#1890ff'}}/>,
-  <ThunderboltTwoTone style={{color:'#1890ff'}}/>,
-  <NodeIndexOutlined style={{color:'#1890ff'}}/>,
-
-  <DotChartOutlined style={{color:'#1890ff'}}/>,
-  <DotChartOutlined style={{color:'#1890ff'}}/>,
-  <FireOutlined style={{color:'#1890ff'}}/>,
-  <BorderOutlined style={{color:'#1890ff'}}/>,
-
-  <LoginOutlined style={{color:'#1890ff'}}/>
-]
-
-function OutPutRender() {
-  const ss = [];
-  for(let i = 0; i <= 16; i++){
-      ss.push(<Col span={4}>
-        <Statistic title={output[i].title} value={11.24 + i*0.4} precision={2} prefix={prefixStatic[i]}
-            valueStyle={{ color: '#002766', fontFamily:'Times New Roman', fontWeight:'bold', fontSize:'16pt'}}/>
-      </Col>);
+class SlidingTabs extends React.Component {
+  render() {
+    return (
+      <div>
+        <Tabs defaultActiveKey="1" tabPosition='left' style={{ height: 320, marginLeft: '-20px' }} tabBarGutter={0} type="card">
+          {[...Array.from({ length: 17 }, (v, i) => i)].map(i => (
+            <TabPane tab={output[i].title} key={i}>
+              <ChartLine />
+            </TabPane>
+          ))}
+        </Tabs>
+      </div>
+    );
   }
-  return ss;
 }
-
 
 
 class ResultData extends React.Component {
   render() {
     return (
       <div className="site-statistic-demo-card">
-
-        <Row gutter={[8, 16]}>
-          <Col span={16}>
-            <p className="banner">Simulation Result</p>
-            <Image height={500} src="WebGL.jpg"/>
-          </Col>
-          <Col span={8}>
-            <Table dataSource={dataSource} columns={columns} bordered={true}
-              size='small' pagination={false} rowClassName='ant-table-tbodys' scroll={{ y: 500 }} />
+        <p className="banner">Simulation Result</p>
+        <Row gutter={[16, 16]} className='output-row'>
+          <Col span={24}>
+            <SlidingTabs />
           </Col>
         </Row>
 
-        <Row gutter={[16, 16]} className='output-row'>
-          <OutPutRender />
+        <Row gutter={[0, 8]} style={{ marginTop: "-15px" }}>
+          <Col span={4}>
+            <div class="shader-small shader-small1">
+              <h1>Patient</h1>
+            </div>
+          </Col>
+          <Col span={8}>
+            <div className="div-small div-small1">
+              <p className="discription"><span className="label1">{input[0].title}:</span>{2}</p>
+              <p className="discription"><span className="label1">{input[1].title}:</span>{2}</p>
+              <p className="discription"><span className="label1">{input[2].title}:</span>{2}</p>
+              <p className="discription"><span className="label1">{input[3].title}:</span>{2}</p>
+            </div>
+          </Col>
+
+          <Col span={4}>
+            <div class="shader-small shader-small2">
+              <h1>Wound</h1>
+            </div>
+          </Col>
+          <Col span={8}>
+            <div className="div-small div-small2">
+              <p className="discription"><span className="label2">{input[4].title}:</span>{2}</p>
+              <p className="discription"><span className="label2">{input[5].title}:</span>{2}</p>
+              <p className="discription"><span className="label2">{input[6].title}:</span>{2}</p>
+              <p className="discription"><span className="label2">{input[7].title}:</span>{2}</p>
+            </div>
+          </Col>
+        </Row>
+        <Row gutter={[0, 8]}>
+          <Col span={4}>
+            <div class="shader-small shader-small3">
+              <h1>Laser</h1>
+            </div>
+          </Col>
+          <Col span={8}>
+            <div className="div-small div-small3">
+              <p className="discription"><span className="label3">{input[8].title}:</span>{2}</p>
+              <p className="discription"><span className="label3">{input[9].title}:</span>{2}</p>
+              <p className="discription"><span className="label3">{input[10].title}:</span>{2}</p>
+              <p className="discription"><span className="label3">{input[11].title}:</span>{2}</p>
+              <p className="discription"><span className="label3">{input[12].title}:</span>{2}</p>
+              <p className="discription"><span className="label3">{input[13].title}:</span>{2}</p>
+              <p className="discription"><span className="label3">{input[14].title}:</span>{2}</p>
+            </div>
+          </Col>
+
+          <Col span={4}>
+            <div class="shader-small shader-small4">
+              <h1>Intervention</h1>
+            </div>
+          </Col>
+          <Col span={8}>
+            <div className="div-small div-small4">
+              <p className="discription"><span className="label4">{input[15].title}:</span>{5}</p>
+              <p className="discription"><span className="label4">{input[16].title}:</span>{2}</p>
+              <p className="discription"><span className="label4">{input[17].title}:</span>{4}</p>
+              <p className="discription"><span className="label4">{input[18].title}:</span>{2}</p>
+              <p className="discription"><span className="label4">{input[19].title}:</span>{4}</p>
+              <p className="discription"><span className="label4">{input[20].title}:</span>{2}</p>
+            </div>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col span={24}>
+            <Image height={650} width="100%" src="WebGL.jpg" />
+          </Col>
         </Row>
       </div>
     );
