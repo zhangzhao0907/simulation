@@ -56,12 +56,12 @@ const Initiation = () => {
 
       <Row gutter={[0, 16]}>
         <Col span={24} style={{ padding: 0, overflow: "hidden" }}>
-          <Image width={300} height={220} src="init1.jpg" className="image-style"></Image>
-          <div class="shader shader1">
+          <Image width={300} height={220} src="init1.jpg" className="float-left"></Image>
+          <div class="shader shader-blue" style={{width:'300px', height:'220px'}}>
             <h1>Patient</h1>
           </div>
 
-          <div className="div-style div1" style={{ height: "220px" }}>
+          <div className="div-style border-blue" style={{ height: "220px" }}>
             <Form.Item name="age" label='Age 年龄' style={{ color: "white" }}>
               <InputNumber min={1} max={100} />
             </Form.Item>
@@ -89,12 +89,12 @@ const Initiation = () => {
 
       <Row gutter={[0, 16]} style={{ marginTop: "25px" }}>
         <Col span={24} style={{ padding: 0, overflow: "hidden" }}>
-          <Image width={300} height={220} src="init2.jpg" className="image-style"></Image>
-          <div class="shader shader2">
+          <Image width={300} height={220} src="init2.jpg" className="float-left"></Image>
+          <div class="shader shader-green" style={{width:'300px', height:'220px'}}>
             <h1>Wound</h1>
           </div>
 
-          <div className="div-style div2" style={{ height: "220px" }}>
+          <div className="div-style border-green" style={{ height: "220px" }}>
             <Form.Item name="wound_width" label="Wound Width 疤痕宽度：">
               <InputNumber min={1} max={150} />
               <span className="span-text">(mm)</span>
@@ -121,12 +121,12 @@ const Initiation = () => {
 
       <Row gutter={[0, 16]} style={{ marginTop: "25px" }}>
         <Col span={24} style={{ padding: 0, overflow: "hidden" }}>
-          <Image width={300} height={360} src="init3.jpg" className="image-style"></Image>
-          <div class="shader shader3">
-            <h1>Laser</h1>
+          <Image width={300} height={360} src="init3.jpg" className="float-left"></Image>
+          <div class="shader shader-purple" style={{width:'300px', height:'360px'}}>
+            <h1 style={{marginTop:"140px"}}>Laser</h1>
           </div>
 
-          <div className="div-style div3" style={{ height: "360px" }}>
+          <div className="div-style div-purple" style={{ height: "360px" }}>
             <Form.Item name="epidermal_laser_density" label="Epidermal Laser Density：">
               <InputNumber min={1} max={150} />
               <span className="span-text">(the discription of the parameter)</span>
@@ -167,12 +167,12 @@ const Initiation = () => {
 
       <Row gutter={[0, 16]} style={{ marginTop: "25px" }}>
         <Col span={24} style={{ padding: 0, overflow: "hidden" }}>
-          <Image width={300} height={315} src="init4.jpg" className="image-style"></Image>
-          <div class="shader shader4">
-            <h1>Intervention</h1>
+          <Image width={300} height={315} src="init4.jpg" className="float-left"></Image>
+          <div class="shader shader-pink" style={{width:'300px', height:'315px'}}>
+            <h1 style={{marginTop:"130px"}}>Intervention</h1>
           </div>
 
-          <div className="div-style div4" style={{ height: "315px" }}>
+          <div className="div-style border-pink" style={{ height: "315px" }}>
             <Form.Item name="pressure" label="Pressure：">
               <InputNumber min={1} max={150} />
               <span className="span-text">(the discription of the parameter)</span>
