@@ -20,66 +20,49 @@
   line-height: 10px;
 }
 
-.div-small{
+.box{
   background-color: #d9d9d9;
   padding-top: 12px;
   padding-left:20px;
 }
 
-.shader-small{
+.box-shader{
   text-align: center;
 }
 
-.shader-small >h1{
+.box-shader >h1{
   font-size: 16pt;
   font-weight: bold;
   line-height: 32pt;
   color:white;
 }
 
-.shader-small1{
+.box-shader-blue{
   height:110px;
   background-color: #0050b3;
   padding-top: 34px;
 }
 
-.div-small1{
-  height:110px;
-}
 
-.shader-small2{
+
+.box-shader-green{
   height:110px;
   background-color: #006d75;
   padding-top: 34px;
 }
 
-.div-small2{
-  height:110px;
-}
-
-
-
-.shader-small3{
+.box-shader-purple{
   height:180px;
   background-color: #391085;
   padding-top: 60px;
 }
 
-.div-small3{
-  height:180px;
-}
 
-.shader-small4{
+.box-shader-pink{
   height:180px;
   background-color: #9e1068;
   padding-top: 60px;
 }
-
-.div-small4{
-  height:180px;
-  padding-top: 20px;
-}
-
 
 .label-blue {
   color: #0050b3;

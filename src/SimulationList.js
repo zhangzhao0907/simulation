@@ -13,19 +13,8 @@ import Filter from './Filter.js'
 
 
 const DescriptionItem = ({ title, content }) => (
-
     <p className="discription">{title}:{content}</p>
-
-
 );
-
-function Description(props) {
-    const ss = [];
-    for (let i = props.from; i <= props.to; i++) {
-        ss.push(<DescriptionItem title={input[i].title} content={props.dataNow[input[i].key]}></DescriptionItem>);
-    }
-    return ss;
-}
 
 const columns = [
     {
@@ -220,12 +209,12 @@ class SimulationList extends React.Component {
 
                     <Row gutter={[0, 8]} style={{marginTop:"-15px"}}>
                         <Col span={4}>
-                            <div class="shader-small shader-small1">
+                            <div class="box-shader box-shader-blue">
                                 <h1>Patient</h1>
                             </div>
                         </Col>
                         <Col span={8}>
-                            <div className="div-small div-small1">
+                            <div className="box" style={{height:'110px'}}>
                                 <p className="discription"><span className="label-blue">{input[0].title}:</span>{dataNow[input[0].key]}</p>
                                 <p className="discription"><span className="label-blue">{input[1].title}:</span>{dataNow[input[1].key]}</p>
                                 <p className="discription"><span className="label-blue">{input[2].title}:</span>{dataNow[input[2].key]}</p>
@@ -234,12 +223,12 @@ class SimulationList extends React.Component {
                         </Col>
 
                         <Col span={4}>
-                            <div class="shader-small shader-small2">
+                            <div class="box-shader box-shader-green">
                                 <h1>Wound</h1>
                             </div>
                         </Col>
                         <Col span={8}>
-                            <div className="div-small div-small2">
+                            <div className="box" style={{height:'110px'}}>
                                 <p className="discription"><span className="label-green">{input[4].title}:</span>{dataNow[input[4].key]}</p>
                                 <p className="discription"><span className="label-green">{input[5].title}:</span>{dataNow[input[5].key]}</p>
                                 <p className="discription"><span className="label-green">{input[6].title}:</span>{dataNow[input[6].key]}</p>
@@ -249,12 +238,12 @@ class SimulationList extends React.Component {
                     </Row>
                     <Row gutter={[0, 8]}>
                         <Col span={4}>
-                            <div class="shader-small shader-small3">
+                            <div class="box-shader box-shader-purple">
                                 <h1>Laser</h1>
                             </div>
                         </Col>
                         <Col span={8}>
-                            <div className="div-small div-small3">
+                            <div className="box" style={{height:'180px'}}>
                                 <p className="discription"><span className="label-purple">{input[8].title}:</span>{dataNow[input[0].key]}</p>
                                 <p className="discription"><span className="label-purple">{input[9].title}:</span>{dataNow[input[1].key]}</p>
                                 <p className="discription"><span className="label-purple">{input[10].title}:</span>{dataNow[input[2].key]}</p>
@@ -266,12 +255,12 @@ class SimulationList extends React.Component {
                         </Col>
 
                         <Col span={4}>
-                            <div class="shader-small shader-small4">
+                            <div class="box-shader box-shader-pink">
                                 <h1>Intervention</h1>
                             </div>
                         </Col>
                         <Col span={8}>
-                            <div className="div-small div-small4">
+                            <div className="box" style={{height:'180px'}}>
                                 <p className="discription"><span className="label-pink">{input[15].title}:</span>{dataNow[input[15].key]}</p>
                                 <p className="discription"><span className="label-pink">{input[16].title}:</span>{dataNow[input[16].key]}</p>
                                 <p className="discription"><span className="label-pink">{input[17].title}:</span>{dataNow[input[17].key]}</p>

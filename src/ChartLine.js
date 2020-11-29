@@ -1,5 +1,5 @@
 import React from "react";
-import {Chart, Line, Point, Tooltip, Axis} from "bizcharts"
+import {Chart, Line, Point, Tooltip, Axis, LineAdvance} from "bizcharts"
 
 const data = [
 	{
@@ -65,7 +65,7 @@ function ChartLine() {
 			data={data}
 			scale={{ value: { min: 0 } }}
 		>
-			<Line position="x*value" shape="smooth"/>
+			<LineAdvance area position="x*value"/>
 			<Point position="x*value" />
 			<Tooltip showCrosshairs shared />
 			<Axis name='value' title={{position: 'center'}} />

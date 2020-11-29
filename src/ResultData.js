@@ -1,8 +1,13 @@
 import './ResultData.css';
 import React from 'react';
-import { Row, Col, Image, Table, Tabs } from 'antd';
+import { Row, Col, Image, Tabs, Statistic, Card } from 'antd';
 import { input, output } from './Global.js';
 import ChartLine from "./ChartLine.js"
+
+import {
+  ArrowUpOutlined,
+  ArrowDownOutlined,
+} from '@ant-design/icons';
 
 const { TabPane } = Tabs;
 
@@ -38,11 +43,11 @@ class ResultData extends React.Component {
 
         <Row gutter={[8, 24]}>
           <Col span={5}>
-            <div class="shader-small shader-small1">
-              <h1 style={{fontSize:'24pt'}}>Patient</h1>
+            <div class="box-shader box-shader-blue">
+              <h1 style={{ fontSize: '24pt' }}>Patient</h1>
             </div>
-         
-            <div className="div-small div-small1" style={{height:'180px'}}>
+
+            <div className="box" style={{ height: '180px' }}>
               <p className="discription"><span className="label-blue">{input[0].title}:</span>{2}</p>
               <p className="discription"><span className="label-blue">{input[1].title}:</span>{2}</p>
               <p className="discription"><span className="label-blue">{input[2].title}:</span>{2}</p>
@@ -50,11 +55,11 @@ class ResultData extends React.Component {
             </div>
           </Col>
           <Col span={5}>
-            <div class="shader-small shader-small2">
-              <h1 style={{fontSize:'24pt'}}>Wound</h1>
+            <div class="box-shader box-shader-green">
+              <h1 style={{ fontSize: '24pt' }}>Wound</h1>
             </div>
-         
-            <div className="div-small div-small2" style={{height:'180px'}}>
+
+            <div className="box" style={{ height: '180px' }}>
               <p className="discription"><span className="label-green">{input[4].title}:</span>{2}</p>
               <p className="discription"><span className="label-green">{input[5].title}:</span>{2}</p>
               <p className="discription"><span className="label-green">{input[6].title}:</span>{2}</p>
@@ -62,10 +67,10 @@ class ResultData extends React.Component {
             </div>
           </Col>
           <Col span={7}>
-            <div class="shader-small shader-small3" style={{height:'110px', paddingTop:'34px'}}>
-              <h1 style={{fontSize:'24pt'}}>Laser</h1>
+            <div class="box-shader box-shader-purple" style={{ height: '110px', paddingTop: '34px' }}>
+              <h1 style={{ fontSize: '24pt' }}>Laser</h1>
             </div>
-            <div className="div-small div-small3">
+            <div className="box" style={{ height: '180px' }}>
               <p className="discription"><span className="label-purple">{input[8].title}:</span>{2}</p>
               <p className="discription"><span className="label-purple">{input[9].title}:</span>{2}</p>
               <p className="discription"><span className="label-purple">{input[10].title}:</span>{2}</p>
@@ -76,10 +81,10 @@ class ResultData extends React.Component {
             </div>
           </Col>
           <Col span={7}>
-            <div class="shader-small shader-small4" style={{height:'110px', paddingTop:'34px'}}>
-              <h1 style={{fontSize:'24pt'}}>Intervention</h1>
+            <div class="box-shader box-shader-pink" style={{ height: '110px', paddingTop: '34px' }}>
+              <h1 style={{ fontSize: '24pt' }}>Intervention</h1>
             </div>
-            <div className="div-small div-small4">
+            <div className="box" style={{ height: '180px' }}>
               <p className="discription"><span className="label-pink">{input[15].title}:</span>{5}</p>
               <p className="discription"><span className="label-pink">{input[16].title}:</span>{2}</p>
               <p className="discription"><span className="label-pink">{input[17].title}:</span>{4}</p>
