@@ -77,7 +77,6 @@ class ResultData extends React.Component {
               <p className="discription"><span className="label-purple">{input[11].title}:</span>{2}</p>
               <p className="discription"><span className="label-purple">{input[12].title}:</span>{2}</p>
               <p className="discription"><span className="label-purple">{input[13].title}:</span>{2}</p>
-              <p className="discription"><span className="label-purple">{input[14].title}:</span>{2}</p>
             </div>
           </Col>
           <Col span={7}>
@@ -85,6 +84,7 @@ class ResultData extends React.Component {
               <h1 style={{ fontSize: '24pt' }}>Intervention</h1>
             </div>
             <div className="box" style={{ height: '180px' }}>
+              <p className="discription"><span className="label-pink">{input[14].title}:</span>{2}</p>
               <p className="discription"><span className="label-pink">{input[15].title}:</span>{5}</p>
               <p className="discription"><span className="label-pink">{input[16].title}:</span>{2}</p>
               <p className="discription"><span className="label-pink">{input[17].title}:</span>{4}</p>

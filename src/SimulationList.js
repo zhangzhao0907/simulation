@@ -207,14 +207,14 @@ class SimulationList extends React.Component {
 
                     <h3 className="sub-title"><EditFilled style={{ marginRight: "4px", color: "#1890ff" }} />Input Parameters</h3>
 
-                    <Row gutter={[0, 8]} style={{marginTop:"-15px"}}>
+                    <Row gutter={[0, 8]} style={{ marginTop: "-15px" }}>
                         <Col span={4}>
                             <div class="box-shader box-shader-blue">
                                 <h1>Patient</h1>
                             </div>
                         </Col>
                         <Col span={8}>
-                            <div className="box" style={{height:'110px'}}>
+                            <div className="box" style={{ height: '110px' }}>
                                 <p className="discription"><span className="label-blue">{input[0].title}:</span>{dataNow[input[0].key]}</p>
                                 <p className="discription"><span className="label-blue">{input[1].title}:</span>{dataNow[input[1].key]}</p>
                                 <p className="discription"><span className="label-blue">{input[2].title}:</span>{dataNow[input[2].key]}</p>
@@ -228,7 +228,7 @@ class SimulationList extends React.Component {
                             </div>
                         </Col>
                         <Col span={8}>
-                            <div className="box" style={{height:'110px'}}>
+                            <div className="box" style={{ height: '110px' }}>
                                 <p className="discription"><span className="label-green">{input[4].title}:</span>{dataNow[input[4].key]}</p>
                                 <p className="discription"><span className="label-green">{input[5].title}:</span>{dataNow[input[5].key]}</p>
                                 <p className="discription"><span className="label-green">{input[6].title}:</span>{dataNow[input[6].key]}</p>
@@ -243,14 +243,13 @@ class SimulationList extends React.Component {
                             </div>
                         </Col>
                         <Col span={8}>
-                            <div className="box" style={{height:'180px'}}>
+                            <div className="box" style={{ height: '180px' }}>
                                 <p className="discription"><span className="label-purple">{input[8].title}:</span>{dataNow[input[0].key]}</p>
                                 <p className="discription"><span className="label-purple">{input[9].title}:</span>{dataNow[input[1].key]}</p>
                                 <p className="discription"><span className="label-purple">{input[10].title}:</span>{dataNow[input[2].key]}</p>
                                 <p className="discription"><span className="label-purple">{input[11].title}:</span>{dataNow[input[3].key]}</p>
                                 <p className="discription"><span className="label-purple">{input[12].title}:</span>{dataNow[input[1].key]}</p>
                                 <p className="discription"><span className="label-purple">{input[13].title}:</span>{dataNow[input[2].key]}</p>
-                                <p className="discription"><span className="label-purple">{input[14].title}:</span>{dataNow[input[3].key]}</p>
                             </div>
                         </Col>
 
@@ -260,7 +259,8 @@ class SimulationList extends React.Component {
                             </div>
                         </Col>
                         <Col span={8}>
-                            <div className="box" style={{height:'180px'}}>
+                            <div className="box" style={{ height: '180px' }}>
+                                <p className="discription"><span className="label-pink">{input[14].title}:</span>{dataNow[input[3].key]}</p>
                                 <p className="discription"><span className="label-pink">{input[15].title}:</span>{dataNow[input[15].key]}</p>
                                 <p className="discription"><span className="label-pink">{input[16].title}:</span>{dataNow[input[16].key]}</p>
                                 <p className="discription"><span className="label-pink">{input[17].title}:</span>{dataNow[input[17].key]}</p>

@@ -5,6 +5,7 @@ import {
   Radio,
   Button,
   Input,
+  Select,
   Image,
   Row,
   Col,
@@ -57,7 +58,7 @@ const Initiation = () => {
       <Row gutter={[0, 16]}>
         <Col span={24} style={{ padding: 0, overflow: "hidden" }}>
           <Image width={300} height={220} src="init1.jpg" className="float-left"></Image>
-          <div class="shader shader-blue" style={{width:'300px', height:'220px'}}>
+          <div class="shader shader-blue" style={{ width: '300px', height: '220px' }}>
             <h1>Patient</h1>
           </div>
 
@@ -90,7 +91,7 @@ const Initiation = () => {
       <Row gutter={[0, 16]} style={{ marginTop: "25px" }}>
         <Col span={24} style={{ padding: 0, overflow: "hidden" }}>
           <Image width={300} height={220} src="init2.jpg" className="float-left"></Image>
-          <div class="shader shader-green" style={{width:'300px', height:'220px'}}>
+          <div class="shader shader-green" style={{ width: '300px', height: '220px' }}>
             <h1>Wound</h1>
           </div>
 
@@ -106,7 +107,13 @@ const Initiation = () => {
             </Form.Item>
 
             <Form.Item name="wound_location" label="Wound Location 疤痕位置：">
-              <Input placeholder="please enter wound location" style={{ width: "200px" }} />
+              <Select defaultValue="1" style={{ width: 90 }}>
+                <Select.Option value="1">Head</Select.Option>
+                <Select.Option value="2">Face</Select.Option>
+                <Select.Option value="3">Body</Select.Option>
+                <Select.Option value="4">Hand</Select.Option>
+                <Select.Option value="6">Foot</Select.Option>
+              </Select>
             </Form.Item>
 
             <Form.Item name="wound_infected" label="Wound Infected 伤口感染：">
@@ -121,12 +128,12 @@ const Initiation = () => {
 
       <Row gutter={[0, 16]} style={{ marginTop: "25px" }}>
         <Col span={24} style={{ padding: 0, overflow: "hidden" }}>
-          <Image width={300} height={360} src="init3.jpg" className="float-left"></Image>
-          <div class="shader shader-purple" style={{width:'300px', height:'360px'}}>
-            <h1 style={{marginTop:"140px"}}>Laser</h1>
+          <Image width={300} height={315} src="init3.jpg" className="float-left"></Image>
+          <div class="shader shader-purple" style={{ width: '300px', height: '315px' }}>
+            <h1 style={{ marginTop: "120px" }}>Laser</h1>
           </div>
 
-          <div className="div-style div-purple" style={{ height: "360px" }}>
+          <div className="div-style div-purple" style={{ height: "315px" }}>
             <Form.Item name="epidermal_laser_density" label="Epidermal Laser Density：">
               <InputNumber min={1} max={150} />
               <span className="span-text">(the discription of the parameter)</span>
@@ -139,11 +146,15 @@ const Initiation = () => {
 
             <Form.Item name="laser_diameter" label="Laser Diameter：">
               <InputNumber min={1} max={150} />
-              <span className="span-text">(mm)</span>
+              <span className="span-text">(μm)</span>
             </Form.Item>
 
             <Form.Item name="laser_cross" label="Laser Cross Section Shape：">
-              <Input placeholder="Please Select" style={{ width: "200px" }} />
+              <Select defaultValue="1" style={{ width: 90 }}>
+                <Select.Option value="1">Circle</Select.Option>
+                <Select.Option value="2">Rect</Select.Option>
+                <Select.Option value="3">Polygon</Select.Option>
+              </Select>
             </Form.Item>
 
             <Form.Item name="laser_inclination_angle" label="Laser Inclination Angle：">
@@ -155,11 +166,6 @@ const Initiation = () => {
               <InputNumber min={1} max={150} />
               <span className="span-text">(days)</span>
             </Form.Item>
-
-            <Form.Item name="betamethason_dosage" label="Betamethason Dosage：">
-              <InputNumber min={1} max={150} />
-              <span className="span-text">(the discription of the parameter)</span>
-            </Form.Item>
           </div>
         </Col>
       </Row>
@@ -167,12 +173,12 @@ const Initiation = () => {
 
       <Row gutter={[0, 16]} style={{ marginTop: "25px" }}>
         <Col span={24} style={{ padding: 0, overflow: "hidden" }}>
-          <Image width={300} height={315} src="init4.jpg" className="float-left"></Image>
-          <div class="shader shader-pink" style={{width:'300px', height:'315px'}}>
-            <h1 style={{marginTop:"130px"}}>Intervention</h1>
+          <Image width={300} height={360} src="init4.jpg" className="float-left"></Image>
+          <div class="shader shader-pink" style={{ width: '300px', height: '360px' }}>
+            <h1 style={{ marginTop: "140px" }}>Intervention</h1>
           </div>
 
-          <div className="div-style border-pink" style={{ height: "315px" }}>
+          <div className="div-style border-pink" style={{ height: "360px" }}>
             <Form.Item name="pressure" label="Pressure：">
               <InputNumber min={1} max={150} />
               <span className="span-text">(the discription of the parameter)</span>
@@ -202,15 +208,20 @@ const Initiation = () => {
               <InputNumber min={1} max={150} />
               <span className="span-text">(the discription of the parameter)</span>
             </Form.Item>
+
+            <Form.Item name="betamethason_dosage" label="Betamethason Dosage：">
+              <InputNumber min={1} max={150} />
+              <span className="span-text">(the discription of the parameter)</span>
+            </Form.Item>
           </div>
         </Col>
       </Row>
 
 
-      <Row style={{ marginTop: "10px"}}>
+      <Row style={{ marginTop: "10px" }}>
         <Col span={24}>
-        <Button type="primary" htmlType="submit" style={{width:'100%',height:'40px'}}>
-              Simulation
+          <Button type="primary" htmlType="submit" style={{ width: '100%', height: '40px' }}>
+            Simulation
             </Button>
         </Col>
       </Row>

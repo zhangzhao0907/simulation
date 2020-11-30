@@ -15,7 +15,6 @@ const input=[
     {title:'Laser Cross Section Shape',key:'laser_cross' ,chn:''},
     {title:'Laser Inclination Angle',key:'laser_inclination_angle' ,chn:''},
     {title:'Duration Between Laser Treatment',key:'duration' ,chn:''},
-    {title:'Betamethason Dosage',key:'betamethason_dosage' ,chn:''},
     
     {title:'Pressure',key:'pressure' ,chn:''},
     {title:'Tension Reduction',key:'tension_reduction' ,chn:''},
@@ -23,6 +22,7 @@ const input=[
     {title:'TGF-β1 Antibody Dosage',key:'tgf_b1_antibody' ,chn:''},
     {title:'Avastin Dosage',key:'avastin_dosage' ,chn:''},
     {title:'Inhibitor Dosage',key:'inhibitor_dosage' ,chn:''}, 
+    {title:'Betamethason Dosage',key:'betamethason_dosage' ,chn:''},
 ];
 
 const output=[
