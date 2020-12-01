@@ -14,7 +14,7 @@ const input=[
     {title:'Laser Diameter',key:'laser_diameter' ,chn:''},
     {title:'Laser Cross Section Shape',key:'laser_cross' ,chn:''},
     {title:'Laser Inclination Angle',key:'laser_inclination_angle' ,chn:''},
-    {title:'Duration Between Laser Treatment',key:'duration' ,chn:''},
+    {title:'Intervals Between Laser Treatment',key:'intervals' ,chn:''},
     
     {title:'Pressure',key:'pressure' ,chn:''},
     {title:'Tension Reduction',key:'tension_reduction' ,chn:''},
